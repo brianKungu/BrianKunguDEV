@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --max-width: 1440px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-weight: 200;
+  --white-color: #fff;
+  --main-color: #e02f6b;
+  --blue-dark: #18293c;
+  --orange: #ffa500;
+  --green-yellow: #cddc39;
+  --pink-light: #efa2b4;
+  --cyan-light: #aef1ee;
+  --white-alpa-40: rgb(255, 255, 255, 0.4);
+  --white-alpa-25: rgb(255, 255, 255, 0.25);
+  --backdrop-filter-blur: blur(5px);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--pink-light),
+    var(--cyan-light)
+  );
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--blue-dark);
+  padding: 5vh 15px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--green-yellow);
+  z-index: -1;
+  opacity: 0.12;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+section {
+  background-color: var(--white-alpa-25);
+  border: 1px solid var(--white-alpa-40);
+  min-height: 90vh;
+  border-radius: 30px;
+}
+
+.main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container {
+  padding: 0 40px;
+  width: 100%;
+}
+
+/* Header section */
+/* .home-section {
+  display: flex;
+} */
+.home-text p {
+  font-size: 18px;
+}
+
+.home-text h1 {
+  font-size: 50px;
+}
+
+.home-text h2 {
+  font-size: 20px;
+}
+
+.home-text h1,
+.home-text h2 {
+  text-transform: capitalize;
+}
+
+.home-text,
+.home-img {
+  /* width:50%; */
+  padding: 15px;
+}
+
+.home-img .img-box {
+  max-width: 360px;
+  background-color: var(--white-alpa-25);
+  border: 8px solid var(--white-alpa-25);
+  border-radius: 50%;
+  margin: auto;
+}
+
+.home-img .img-box img {
+  width: 100%;
+  border-radius: 50%;
+}
