@@ -6,13 +6,13 @@ import Link from 'next/link'
 export default function About() {
   // const [date, setDate] = useState();
   return (
-    <section className="about-section sec-padding" id="about">
+    <section className="hidden about-section sec-padding" id="about">
       <div className="container">
         <div className="section-title">
           <h2>about me</h2>
         </div>
-        <div className="grid md:grid-cols-3">
-          <div className="about-img">
+        <div className="grid md:grid-cols-3 grid-cols-1">
+          <div className="about-img mb-10 md:mb-0">
             <div className="img-box">
               <Image
                 src="/images/testimage2.png"
@@ -44,8 +44,11 @@ export default function About() {
                 </div>
               );
             })}
-            <Link href="#" passHref className="btn mr-4">download CV</Link>
-            <Link href="#" passHref className="btn">contact me</Link>
+            <div className="flex gap-4 flex-wrap items-center text-center md:flex-nowrap">
+            <Link href="#" passHref className="btn w-full">download CV</Link>
+            <Link href="#" passHref className="btn w-full">contact me</Link>
+            </div>
+            
           </div>
         </div>
       </div>
