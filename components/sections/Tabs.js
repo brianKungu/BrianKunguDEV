@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import details from "utils/data";
 export default function Tabs({ date, school, course }) {
   const [toggleTab, setToggleTab] = useState("Education");
+
   return (
     <>
       <div className="about-tabs">
@@ -44,29 +45,20 @@ export default function Tabs({ date, school, course }) {
         className={toggleTab === "Experience" ? "tab-content" : "hidden"}
         id="experience"
       >
-        <div className="timeline">
-          <div className="timeline-item">
-            <span className="date">2021-2022</span>
-            <h4>
-              Frontend developer - <span>Hexlen</span>
-            </h4>
-            <p>kldfldflksdflkdlfks</p>
-          </div>
-          <div className="timeline-item">
-            <span className="date">2021-2022</span>
-            <h4>
-              Frontend developer - <span>Hexlen</span>
-            </h4>
-            <p>lkdflklkflkdfgld</p>
-          </div>
-          <div className="timeline-item">
-            <span className="date">2021-2022</span>
-            <h4>
-              Frontend developer - <span>Hexlen</span>
-            </h4>
-            <p>flskdmflkdmflk</p>
-          </div>
-        </div>
+        {details &&
+          details.map((detail) => {
+            return detail.professionalExperience.map((experience, index) => (
+              <div className="timeline" key={index}>
+                <div className="timeline-item">
+                  <span className="date">{experience.period}</span>
+                  <h4>
+                    {experience.role} - <span>{experience.company}</span>
+                  </h4>
+                  <p className="text-black">{experience.achievements}</p>
+                </div>
+              </div>
+            ));
+          })}
       </div>
       {/* Experience section */}
     </>

@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function About() {
   // const [date, setDate] = useState();
   return (
-    <section className="hidden about-section sec-padding" id="about">
+    <section className="about-section sec-padding" id="about">
       <div className="container">
         <div className="section-title">
           <h2>about me</h2>
@@ -38,7 +38,6 @@ export default function About() {
                   </div>
                   {detail &&
                     detail.education.map((item, index) => {
-                      console.log(item.name);
                       return <Tabs date={item.date} school={item.school} course={item.course} key={index} />;
                     })}
                 </div>

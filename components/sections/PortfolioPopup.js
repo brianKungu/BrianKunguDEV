@@ -13,7 +13,7 @@ export default function PortfolioPopup({ closeModal }) {
     <>
       <div className="portfolio-popup">
         <div className="pp-inner overlay">
-          <div className="pp-content">
+          <div className="pp-content font-bold">
             <div className="pp-header">
               <button type="button" className="btn pp-close">
                 <AiOutlineClose onClick={closeModal} />
@@ -24,6 +24,7 @@ export default function PortfolioPopup({ closeModal }) {
                   alt="project-image"
                   width={1000}
                   height={1000}
+                  priority
                 />
               </div>
               <h3>Allied properties landing page</h3>

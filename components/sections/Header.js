@@ -5,7 +5,7 @@ import * as Scroll from "react-scroll";
 import { Link } from "react-scroll";
 export default function Header() {
   return (
-    <section id="header" className="flex items-center hidden-sec">
+    <section id="header" className="flex items-center">
       <div className="container">
         <div className="grid md:grid-cols-2 items-center">
           <div className="home-text">
@@ -19,11 +19,18 @@ export default function Header() {
               offset={50}
               duration={500}
               passHref
-              class="btn"
+              className="btn"
             >
               Get to know me
             </Link>
-            <Link to="#" class="btn">
+            <Link
+              to="portfolio"
+              className="btn"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
               portfolio
             </Link>
           </div>

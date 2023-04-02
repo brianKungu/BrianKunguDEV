@@ -16,8 +16,11 @@
   --pink-light: #efa2b4;
   --cyan-light: #aef1ee;
   --white-alpa-40: rgb(255, 255, 255, 0.4);
+  --white-alpa-50: rgb(255, 255, 255, 0.5);
+
   --white-alpa-25: rgb(255, 255, 255, 0.25);
   --backdrop-filter-blur: blur(5px);
+  --deep-backdrop-filter-blur: blur(600px);
 }
 
 * {
@@ -47,6 +50,10 @@ body {
   line-height: 1.5;
   color: var(--blue-dark);
   padding: 5vh 15px;
+}
+
+body.hide-scrolling {
+  overflow-y: hidden;
 }
 
 body::before {
@@ -93,6 +100,11 @@ section {
 .main {
   max-width: 1200px;
   margin: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+section.fade-out {
+  opacity: 0;
 }
 
 .container {
@@ -431,16 +443,17 @@ button {
 }
 
 .overlay {
-  /* background-color: var(--main-color); */
+  border-radius: 30px;
+  background-color: var(--white-alpa-40);
 }
 .pp-content {
-  background-color: var(--white-alpa-25);
+  background-color: var(--white-alpa-50);
   border: 1px solid var(--white-alpa-40);
   padding: 30px;
   border-radius: 30px;
   max-width: 900px;
   width: 100%;
-  backdrop-filter: var(--backdrop-filter-blur);
+  backdrop-filter: var(--deep-backdrop-filter-blur);
 }
 
 .pp-header {
