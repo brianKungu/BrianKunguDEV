@@ -2,21 +2,19 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
+import { useSelector, useDispatch } from "react-redux";
+
 
 export default function PortfolioPopup({ closeModal }) {
-  //   const [showModal, setShowModal] = useState(false);
-  //   const handleShow = () => {
-  //     console.log("close ");
-  //     setShowModal(!showModal);
-  //   };
+  const dispatch = useDispatch()
   return (
     <>
       <div className="portfolio-popup">
         <div className="pp-inner overlay">
           <div className="pp-content font-bold">
             <div className="pp-header">
-              <button type="button" className="btn pp-close">
-                <AiOutlineClose onClick={closeModal} />
+              <button type="button" className="btn pp-close" onClick={()=> dispatch(closeModal)}>
+                <AiOutlineClose  />
               </button>
               <div className="pp-thumbnail">
                 <Image

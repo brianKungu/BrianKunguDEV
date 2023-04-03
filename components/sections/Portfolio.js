@@ -3,11 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import PortfolioPopup from "./PortfolioPopup";
 import details from "utils/data";
+import { actionType } from "../context/reducer";
+import { useStateValue } from "../context/stateProvider";
 
 export default function Portfolio() {
-  const [openModal, setOpenModal] = useState(false);
-  const handleChange = () => {
-    setOpenModal(!openModal);
+  // const [openModal, setOpenModal] = useState(false);
+  // const handleChange = () => {
+  //   setOpenModal(!openModal);
+  // };
+  const [{ modalShow }, dispatch] = useStateValue();
+
+  const showModal = () => {
+    dispatch({
+      type: actionType.SET_SHOW_MODAL,
+      modalShow: !modalShow,
+    });
   };
   return (
     <section
@@ -21,7 +31,7 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="grid md:grid-cols-3 items-center">
-          {openModal && <PortfolioPopup closeModal={handleChange} />}
+          {openModal && <PortfolioPopup closeModal={closeModal} />}
 
           {/* Portfolio item start */}
           {details &&
@@ -59,9 +69,9 @@ export default function Portfolio() {
                         <li>
                           View online -{" "}
                           <span>
-                            <Link href="#" target="_blank">
+                            <button aria-label="open modal" onClick={showModal}>
                               view project
-                            </Link>
+                            </button>
                           </span>
                         </li>
                       </ul>
