@@ -3,12 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import PortfolioPopup from "./PortfolioPopup";
 import details from "utils/data";
+import { showModal, hideModal } from "@/redux/features/modalSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Portfolio() {
-  const [openModal, setOpenModal] = useState(false);
-  const handleChange = () => {
-    setOpenModal(!openModal);
-  };
+  // const [openModal, setOpenModal] = useState(false);
+  // const handleChange = () => {
+  //   setOpenModal(!openModal);
+  // };
+
+  const modalStatus = useSelector((state) => state.modal.value);
+  const dispatch = useDispatch();
+  const openModal = () => {
+    dispatch(showModal())
+  }
+
+  
   return (
     <section
       className="hide-scrolling portfolio-section sec-padding"
@@ -21,7 +31,7 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="grid md:grid-cols-3 items-center">
-          {openModal && <PortfolioPopup closeModal={handleChange} />}
+          {modalStatus && <PortfolioPopup />}
 
           {/* Portfolio item start */}
           {details &&
@@ -38,7 +48,7 @@ export default function Portfolio() {
                     />
                   </div>
                   <h3 className="portfolio-item-title">{work.name}</h3>
-                  <button type="button" className="btn view-project-btn">
+                  <button type="button" className="btn view-project-btn" onClick={openModal}>
                     view project
                   </button>
                   <div className="portfolio-item-details">
