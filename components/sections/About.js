@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function About() {
   // const [date, setDate] = useState();
   return (
-    <section className="about-section sec-padding" id="about">
+    <section className="about-section sec-padding hidden" id="about">
       <div className="container">
         <div className="section-title">
           <h2>about me</h2>

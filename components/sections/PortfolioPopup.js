@@ -5,15 +5,15 @@ import Link from "next/link";
 import { showModal, hideModal } from "@/redux/features/modalSlice";
 import { useDispatch } from "react-redux";
 
-export default function PortfolioPopup() {
-  const dispatch = useDispatch();
-  const closeModal = () => {
-    dispatch(hideModal());
-  };
+export default function PortfolioPopup({ closeModal, openModal }) {
+  // const dispatch = useDispatch();
+  // const closeModal = () => {
+  //   dispatch(hideModal());
+  // };
   return (
     <>
       <div className="portfolio-popup">
-        <div className="pp-inner overlay">
+        <div className="pp-inner overlay" onClick={closeModal}>
           <div className="pp-content font-bold">
             <div className="pp-header">
               <button
