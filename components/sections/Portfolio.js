@@ -7,11 +7,6 @@ import { showModal, hideModal } from "@/redux/features/modalSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Portfolio() {
-  // const [openModal, setOpenModal] = useState(false);
-  // const handleChange = () => {
-  //   setOpenModal(!openModal);
-  // };
-
   const modalStatus = useSelector((state) => state.modal.value);
   const dispatch = useDispatch();
   const openModal = () => {
@@ -23,7 +18,7 @@ export default function Portfolio() {
   };
   return (
     <section
-      className="hide-scrolling portfolio-section sec-padding hidden"
+      className="hide-scrolling portfolio-section sec-padding"
       id="portfolio"
     >
       <div className="container">
