@@ -2,7 +2,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import details from "../../utils/data";
 import Tabs from "./Tabs";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "react-scroll";
 export default function About() {
   // const [date, setDate] = useState();
   return (
@@ -54,7 +55,7 @@ export default function About() {
               <Link href="#" passHref className="btn w-full">
                 download CV
               </Link>
-              <Link href="#" passHref className="btn w-full">
+              <Link to="contact" passHref className="btn w-full">
                 contact me
               </Link>
             </div>

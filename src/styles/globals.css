@@ -253,7 +253,7 @@ button {
   background-color: var(--main-color);
   position: relative;
   z-index: 1;
-  transition:background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .header .nav-toggler span::before,
@@ -626,7 +626,6 @@ button {
 /* contact page */
 .contact-form,
 .contact-info {
-  width: 50%;
   padding: 0 15px;
 }
 
@@ -687,12 +686,29 @@ button {
   border: 1px solid var(--white-alpa-40);
   color: var(--main-color);
   border-radius: 50%;
-  margin: 6px 4px 0 0;
+  margin: 6px 6px 0 0;
   transition: all 0.3s ease;
 }
 
 .contact-info-item .social-links a:hover {
-  color: var(--white);
+  color: var(--white-color);
   background-color: var(--main-color);
 }
 /* !contact page */
+
+.error-message {
+  color: var(--main-color);
+}
+
+.footer-text{
+  color:var(--main-color);
+  font-weight: 600;
+  font-family: inherit;
+  letter-spacing: 6px;
+}
+
+@media screen and (max-width: 375px) {
+  .section-title h2 {
+    font-size: 30px;
+  }
+}
