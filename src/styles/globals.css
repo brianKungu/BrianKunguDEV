@@ -49,7 +49,8 @@ body {
   background-attachment: fixed;
   line-height: 1.5;
   color: var(--blue-dark);
-  padding: 5vh 15px;
+  padding: 35px 15px;
+  --webkit-tap-highlight-color: transparent;
 }
 
 body.hide-scrolling {
@@ -88,7 +89,9 @@ img {
 section {
   background-color: var(--white-alpa-25);
   border: 1px solid var(--white-alpa-40);
+  /* min-height: calc(100vh -70px); */
   min-height: 90vh;
+
   border-radius: 30px;
   backdrop-filter: var(--backdrop-filter-blur);
 }
@@ -101,6 +104,7 @@ section {
   max-width: 1200px;
   margin: auto;
   transition: all 0.5s ease-in-out;
+  position: relative;
 }
 
 section.fade-out {
@@ -218,6 +222,122 @@ button {
 }
 
 /* custom scrollbar */
+
+/* Header */
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 20px 0 0;
+}
+.header .nav-toggler {
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--white-alpa-25);
+  border: 1px solid var(--white-alpa-40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15px;
+  z-index: 1;
+}
+
+.header .nav-toggler span {
+  height: 2px;
+  width: 24px;
+  background-color: var(--main-color);
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.header .nav-toggler span::before,
+.header .nav-toggler span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.header .nav-toggler span::before {
+  left: 0;
+  transform: translateY(-8px);
+}
+
+.header .nav-toggler span::after {
+  right: 0;
+  transform: translateY(8px);
+}
+
+.header .nav-toggler:hover span::before,
+.header .nav-toggler:hover span::after {
+  width: 50%;
+}
+
+.header .nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 35px 15px;
+}
+
+.header .nav-inner {
+  min-height: calc(100vh- 70px);
+  max-width: 1200px;
+  margin: auto;
+  background-color: var(--white-alpa-25);
+  border: 1px solid var(--white-alpa-40);
+  backdrop-filter: var(--backdrop-filter-blur);
+  padding: 50px 0;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .nav-inner ul {
+  text-align: center;
+}
+
+.header .nav-inner ul li a {
+  font-size: 40px;
+  color: var(--blue-dark);
+  display: block;
+  padding: 8px 15px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.header .nav-inner ul li a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  width: 0%;
+  background-color: var(--white-alpa-25);
+  z-index: -1;
+  transition: width 0.5s ease;
+}
+
+.header .nav-inner ul li a:hover::before {
+  width: 100%;
+}
+
+.header .nav-inner ul li a:hover {
+  color: var(--main-color);
+}
+/* Header */
 
 /* about page */
 .section-title {
@@ -502,3 +622,93 @@ button {
 }
 
 /* portfolio popup */
+
+/* contact page */
+.contact-form,
+.contact-info {
+  padding: 0 15px;
+}
+
+.contact-form .input-group {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.contact-form .input-control::placeholder {
+  color: var(--blue-dark);
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+.contact-form .input-control {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: var(--white-alpa-25);
+  padding: 0 20px;
+  color: var(--blue-dark);
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form .input-control:focus {
+  border-color: var(--white-alpa-40);
+}
+
+.contact-form textarea.input-control {
+  height: 120px;
+  resize: none;
+  padding-top: 15px;
+}
+
+.contact-info-item {
+  margin: 0 0 30px;
+  padding: 0 0 0 20px;
+}
+
+.contact-info-item h3 {
+  font-size: 20px;
+  margin: 0 0 5px;
+}
+
+.contact-info-item .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: var(--white-alpa-25);
+  border: 1px solid var(--white-alpa-40);
+  color: var(--main-color);
+  border-radius: 50%;
+  margin: 6px 6px 0 0;
+  transition: all 0.3s ease;
+}
+
+.contact-info-item .social-links a:hover {
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+/* !contact page */
+
+.error-message {
+  color: var(--main-color);
+}
+
+.footer-text{
+  color:var(--main-color);
+  font-weight: 600;
+  font-family: inherit;
+  letter-spacing: 6px;
+}
+
+@media screen and (max-width: 375px) {
+  .section-title h2 {
+    font-size: 30px;
+  }
+}

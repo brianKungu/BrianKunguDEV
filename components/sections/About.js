@@ -2,7 +2,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import details from "../../utils/data";
 import Tabs from "./Tabs";
-import Link from 'next/link'
+// import Link from "next/link";
+import { Link } from "react-scroll";
 export default function About() {
   // const [date, setDate] = useState();
   return (
@@ -38,16 +39,26 @@ export default function About() {
                   </div>
                   {detail &&
                     detail.education.map((item, index) => {
-                      return <Tabs date={item.date} school={item.school} course={item.course} key={index} />;
+                      return (
+                        <Tabs
+                          date={item.date}
+                          school={item.school}
+                          course={item.course}
+                          key={index}
+                        />
+                      );
                     })}
                 </div>
               );
             })}
             <div className="flex gap-4 flex-wrap items-center text-center md:flex-nowrap">
-            <Link href="#" passHref className="btn w-full">download CV</Link>
-            <Link href="#" passHref className="btn w-full">contact me</Link>
+              <Link href="#" passHref className="btn w-full">
+                download CV
+              </Link>
+              <Link to="contact" passHref className="btn w-full">
+                contact me
+              </Link>
             </div>
-            
           </div>
         </div>
       </div>
