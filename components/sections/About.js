@@ -16,7 +16,7 @@ export default function About() {
           <div className="about-img mb-10 md:mb-0">
             <div className="img-box">
               <Image
-                src="/images/testimage2.png"
+                src="/images/myImage.png"
                 priority
                 width={400}
                 height={400}

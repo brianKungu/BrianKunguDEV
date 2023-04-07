@@ -28,15 +28,11 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="grid md:grid-cols-3 items-center">
-          {modalStatus && (
-            <PortfolioPopup closeModal={closeModal} openModal={openModal} />
-          )}
-
           {/* Portfolio item start */}
           {details &&
             details.map((detail) => {
-              return detail.recentWork.map((work, index) => (
-                <div className="portfolio-item" key={index}>
+              return detail.recentWork.map((work) => (
+                <div className="portfolio-item" key={work.id}>
                   <div className="portfolio-item-thumbnail">
                     <Image
                       src={work.imgSrc}
@@ -54,32 +50,21 @@ export default function Portfolio() {
                   >
                     view project
                   </button>
-                  <div className="portfolio-item-details">
-                    <div className="description">
-                      <p>{work.description}kjhkjhk</p>
-                    </div>
-                    <div className="general-info">
-                      <ul>
-                        <li>
-                          Created - <span>20th March 2023</span>
-                        </li>
-                        <li>
-                          technologies used - <span>HTML, CSS</span>
-                        </li>
-                        <li>
-                          Role - <span>Frontend</span>
-                        </li>
-                        <li>
-                          View online -{" "}
-                          <span>
-                            <Link href="#" target="_blank">
-                              view project
-                            </Link>
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+
+                  {modalStatus && (
+                    <PortfolioPopup
+                      closeModal={closeModal}
+                      openModal={openModal}
+                      name={work.name}
+                      description={work.description}
+                      period={work.dateCreated}
+                      techStack={work.techStack}
+                      role={work.role}
+                      img={work.imgSrc}
+                      link={work.link}
+
+                    />
+                  )}
                 </div>
               ));
             })}

@@ -70,7 +70,7 @@ export default function Header() {
             <div className="home-img flex-1">
               <div className="img-box">
                 <Image
-                  src="/images/testimage2.png"
+                  src="/images/myImage.png"
                   width={360}
                   height={360}
                   priority
