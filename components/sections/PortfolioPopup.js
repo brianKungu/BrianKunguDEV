@@ -2,17 +2,11 @@ import React from "react";
 import Image from "next/image";
 import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
-
-export default function PortfolioPopup({
-  closeModal,
-  name,
-  description,
-  period,
-  techStack,
-  role,
-  img,
-  link,
-}) {
+import { useSelector } from "react-redux";
+import { selectPortfolio } from "@/redux/features/portfolioSlice";
+export default function PortfolioPopup({ closeModal }) {
+  const portfolioWork = useSelector(selectPortfolio);
+  console.log(portfolioWork)
   return (
     <>
       <div className="portfolio-popup">
@@ -24,34 +18,34 @@ export default function PortfolioPopup({
               </button>
               <div className="pp-thumbnail">
                 <Image
-                  src={img}
+                  src={portfolioWork.imgSrc}
                   alt="project-image"
                   width={1000}
                   height={1000}
                   priority
                 />
               </div>
-              <h3>{name}</h3>
+              <h3>{portfolioWork.name}</h3>
             </div>
             <div className="pp-body">
               <div className="description">
-                <p>{description}</p>
+                <p>{portfolioWork.description}</p>
               </div>
               <div className="general-info">
                 <ul className="list-style-none capitalize">
                   <li>
-                    Created - <span>{period}</span>
+                    Created - <span>{portfolioWork.period}</span>
                   </li>
                   <li>
-                    technologies used - <span>{techStack}</span>
+                    technologies used - <span>{portfolioWork.techStack}</span>
                   </li>
                   <li>
-                    Role - <span>{role}</span>
+                    Role - <span>{portfolioWork.role}</span>
                   </li>
                   <li>
                     View online -{" "}
                     <span>
-                      <Link href={link} target="_blank">
+                      <Link href={portfolioWork.link} target="_blank">
                         view project
                       </Link>
                     </span>

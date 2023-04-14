@@ -4,16 +4,19 @@ import Link from "next/link";
 import PortfolioPopup from "./PortfolioPopup";
 import details from "utils/data";
 import { showModal, hideModal } from "@/redux/features/modalSlice";
+import { setPortfolio, clearPortfolio } from "@/redux/features/portfolioSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Portfolio() {
   const modalStatus = useSelector((state) => state.modal.value);
   const dispatch = useDispatch();
-  const openModal = () => {
+  const openModal = (work) => {
+    dispatch(setPortfolio(work));
     dispatch(showModal());
   };
 
   const closeModal = () => {
+    dispatch(clearPortfolio());
     dispatch(hideModal());
   };
   return (
@@ -46,7 +49,7 @@ export default function Portfolio() {
                   <button
                     type="button"
                     className="btn view-project-btn"
-                    onClick={openModal}
+                    onClick={() => openModal(work)}
                   >
                     view project
                   </button>
@@ -55,14 +58,6 @@ export default function Portfolio() {
                     <PortfolioPopup
                       closeModal={closeModal}
                       openModal={openModal}
-                      name={work.name}
-                      description={work.description}
-                      period={work.dateCreated}
-                      techStack={work.techStack}
-                      role={work.role}
-                      img={work.imgSrc}
-                      link={work.link}
-
                     />
                   )}
                 </div>
