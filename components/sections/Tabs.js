@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import details from "utils/data";
 export default function Tabs({ date, school, course }) {
   const [toggleTab, setToggleTab] = useState("Education");
-
+  const text = " "
   return (
     <>
       <div className="about-tabs">
