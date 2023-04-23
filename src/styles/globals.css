@@ -117,10 +117,6 @@ section.fade-out {
   width: 100%;
 }
 
-/* Header section */
-/* .home-section {
-  display: flex;
-} */
 .home-text p {
   font-size: 18px;
 }
@@ -147,7 +143,6 @@ section.fade-out {
 
 .home-text,
 .home-img {
-  /* width:50%; */
   padding: 15px;
 }
 
@@ -542,7 +537,7 @@ button {
   height: 100%;
   width: 100%;
   z-index: 200;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .pp-inner {

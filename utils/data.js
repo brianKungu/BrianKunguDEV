@@ -23,7 +23,7 @@ const details = [
     ],
     professionalExperience: [
       {
-        period: "Feb 2022 - September 2022",
+        period: "Feb 2021 - September 2022",
         role: "Frontend Developer",
         company: "Hexlen LLC, New Zealand",
         companyType: "E-commerce",
@@ -38,7 +38,7 @@ const details = [
         period: "Jan 2022 - May 2022",
         role: "IT Support Intern",
         company: "National Water Harvesting and Storage Authority, Kenya",
-        companyType: "Borehole Drilling Company",
+        companyType:"An organization that undertakes a mandate on behalf of the national government, including the provision of water during drought emergencies.",
         achievements: [
           "I repaired and replaced damaged computer and network components.",
           "Diagnosed and troubleshot software and hardware-related issues.",
@@ -48,6 +48,7 @@ const details = [
           "Supporting other users whenever they encountered challenges with computers and network devices.",
         ],
       },
+     
       {
         period: "Jan 2023 - present",
         role: "Frontend Developer",
@@ -64,26 +65,7 @@ const details = [
     ],
     recentWork: [
       {
-        id:1,
-        name: "Allied Properties Kenya",
-        dateCreated: "January 2023 - March 2023",
-        techStack: ["HTML5, Tailwind CSS, Django , NextJS"],
-        role: ["UI designer, Frontend Developer"],
-        imgSrc: "/images/alliedProperties.jpg",
-        description:
-          "This is a real estate website made for Allied Properties Kenya. The main purpose of this webisite is to showcase the various propperties in being sold by the company.",
-        link: "https:/alliedproperties.co.ke",
-        achievements: [
-          "I designed the webisite based on the client's requirements using Figma",
-          "I implemented the designs using NextJS, Tailwind CSS and HTML5",
-          "I collaborated with other developers to carry out tasks that required teamwork",
-          "Worked closely with the client to ensure that their requirements are met",
-          "I learned how to fetch data from REST API using getSaticProps",
-          "I learned how to dynamically route pages using getSaticPaths",
-        ],
-      },
-      {
-        id:2,
+        id: 1,
         name: "Deli-Grocery",
         dateCreated: "October 2022 - November 2022",
         techStack: ["HTML5, Tailwind CSS, NextJS, React Context"],
@@ -93,12 +75,48 @@ const details = [
           "This is a grocery web application. The name Deli-Grocery came from two words: Deliver and Grocery since clients can place their order and provide their address where the products will be delivered to.",
         link: "https://grocery-store-opal.vercel.app/",
         achievements: [
-          "I designed the webisite based on the client's requirements using Figma",
+          "I learned how to fetch data using the Fetch API",
+          "I learned how to dynamically route pages",
+          "I learned how to manage states using React Context",
+          "Made the website mobile responsive",
+        ],
+      },
+      {
+        id: 2,
+        name: "Allied Properties Kenya",
+        dateCreated: "January 2023 - March 2023",
+        techStack: ["HTML5, Tailwind CSS, Django , NextJS"],
+        role: ["UI designer, Frontend Developer"],
+        imgSrc: "/images/AlliedPstats.jpg",
+        description:
+          "This is a real estate website made for Allied Properties Kenya. The main purpose of this webisite is to showcase the various propperties in being sold by the company.",
+        link: "https:/alliedproperties.co.ke",
+        achievements: [
+          "I designed the website based on the client's requirements using Figma",
           "I implemented the designs using NextJS, Tailwind CSS and HTML5",
           "I collaborated with other developers to carry out tasks that required teamwork",
           "Worked closely with the client to ensure that their requirements are met",
           "I learned how to fetch data from REST API using getSaticProps",
           "I learned how to dynamically route pages using getSaticPaths",
+          "Made the website mobile responsive",
+        ],
+      },
+      ,
+      {
+        id: 3,
+        name: "Vidshop",
+        dateCreated: "April 2023 - present",
+        techStack: ["HTML5, Tailwind CSS, NextJS"],
+        role: ["Frontend Developer"],
+        imgSrc: "/images/vidshopPstats.jpg",
+        description:
+          "Vidshop is a social media marketing app that enables users to leverage existing videos on popular platforms to promote and sell products effectively.",
+        link: "vid-shop.vercel.app",
+        achievements: [
+          "I designed the website based on the client's requirements",
+          "I implemented the designs using NextJS, Tailwind CSS and HTML5",
+          "Worked closely with the client to ensure that their requirements are met",
+          "Made the website mobile responsive",
         ],
       },
     ],
