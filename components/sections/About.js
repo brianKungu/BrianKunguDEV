@@ -52,9 +52,14 @@ export default function About() {
               );
             })}
             <div className="flex gap-4 flex-wrap items-center text-center md:flex-nowrap">
-              <Link href="#" passHref className="btn w-full">
-                download CV
-              </Link>
+              <a
+                href="https://flowcv.com/resume/vqg0590u2e"
+                passHref
+                className="btn w-full"
+                target="_blank"
+              >
+                View CV
+              </a>
               <Link to="contact" passHref className="btn w-full">
                 contact me
               </Link>

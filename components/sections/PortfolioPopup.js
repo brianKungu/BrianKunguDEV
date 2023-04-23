@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import { selectPortfolio } from "@/redux/features/portfolioSlice";
 export default function PortfolioPopup({ closeModal }) {
   const portfolioWork = useSelector(selectPortfolio);
-  console.log(portfolioWork)
   return (
     <>
       <div className="portfolio-popup">
@@ -34,7 +33,7 @@ export default function PortfolioPopup({ closeModal }) {
               <div className="general-info">
                 <ul className="list-style-none capitalize">
                   <li>
-                    Created - <span>{portfolioWork.period}</span>
+                    Created - <span>{portfolioWork.dateCreated}</span>
                   </li>
                   <li>
                     technologies used - <span>{portfolioWork.techStack}</span>
