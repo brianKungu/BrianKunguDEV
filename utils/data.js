@@ -50,7 +50,7 @@ const details = [
       },
      
       {
-        period: "Jan 2023 - present",
+        period: "Jan 2023 - May 2023",
         role: "Frontend Developer",
         company: "Allied Properties Kenya",
         companyType: "Real Estate Company",
@@ -62,6 +62,18 @@ const details = [
           "The website is still in its development stage",
         ],
       },
+      {
+        period:"May 2023 - present",
+        role:"Web Applications Engineer",
+        company:"Avana Spaces Limited",
+        companyType:"Startup Real Estate Company",
+        achievements:[
+          "I build, optimize and manage high-quality web applications",
+          "I work closely with UI/UX designers to convert designs into responsive user interfaces using Nextjs 13.4 and Tailwind CSS"
+          "I liase  with the Backend Engineer to consume the Avana Spaces API and other third party API's"
+          "I maintain the company's web applications",
+        ]
+      }
     ],
     recentWork: [
       {
